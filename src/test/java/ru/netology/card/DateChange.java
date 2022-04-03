@@ -30,7 +30,7 @@ public class DateChange {
     @Test
     void happyPathResendWithChangedDate(){
         Configuration.holdBrowserOpen = true;
-        Selenide.open("http://0.0.0.0:9999/");
+        Selenide.open("http://localhost:9999/");
         $("[data-test-id='city'] input").val(info.getCity());
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='date'] input").val(strData);
@@ -57,11 +57,11 @@ public class DateChange {
     @Test
     void nameWithYo() {
         Configuration.holdBrowserOpen = true;
-        Selenide.open("http://0.0.0.0:9999/");
+        Selenide.open("http://localhost:9999/");
         $("[data-test-id='city'] input").val(info.getCity());
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='date'] input").val(strData);
-        $("[data-test-id='name'] input").val("Лысак Виталий Леонидович");
+        $("[data-test-id='name'] input").val("Валёха Антонина Михайловна");
         $("[data-test-id='phone'] input").val(info.getPhone());
         $("[data-test-id='agreement']").click();
         $("div .button").click();
